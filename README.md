@@ -2,7 +2,7 @@
 
 This project runs with the runtime .NET Core, in order to run the code please install [here](https://dotnet.microsoft.com/download) the .NET Core.
 
-## Usage
+## Runing the Application
 1. Clone the project
 ```bash
 git clone https://github.com/udacity/CppND-Route-Planning-Project.git
