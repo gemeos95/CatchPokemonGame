@@ -1,9 +1,13 @@
 ## Installation
 
-Install [.NET core SDK](https://dotnet.microsoft.com/download)
+This project runs with the runtime .NET Core, in order to run the code please install [here](https://dotnet.microsoft.com/download) the .NET Core.
 
 ## Usage
-
+1. Clone the project
+```bash
+git clone https://github.com/udacity/CppND-Route-Planning-Project.git
+```
+2. After the clone, to run the application itself just type the following comands in your cmd.
 ```bash
 cd CatchPokemonGame/src
 dotnet build
@@ -12,7 +16,7 @@ dotnet run
 
 ## Testing
 
-I'm using the xunit tests
+To run the xunit tests, just type the following comands in your cmd.
 
 ```bash
 cd CatchPokemonGame/test
