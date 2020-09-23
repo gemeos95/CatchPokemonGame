@@ -21,20 +21,19 @@ namespace CatchPokemons
         static private void CheckValidInput(string moves)
         {
             validInput = true;
-            foreach (char move in moves)
+            foreach (char move in moves.ToLower())
             {
+
                 switch (move)
                 {
-                    case 'N':
+                    case 'n':
+                        break;
+                    case 's':
                         break;
 
-                    case 'S':
+                    case 'e':
                         break;
-
-                    case 'E':
-                        break;
-
-                    case 'O':
+                    case 'o':
                         break;
 
                     default:
