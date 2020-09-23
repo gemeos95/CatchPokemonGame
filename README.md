@@ -1,6 +1,3 @@
-<<<<<<< HEAD:README.md
-1- Install .NET core SDK: https://dotnet.microsoft.com/download
-
 ## Installation
 
 Install [.NET core SDK](https://dotnet.microsoft.com/download)

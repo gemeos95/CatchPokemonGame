@@ -5,21 +5,30 @@ namespace CatchPokemons
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             //Start Game and Check input
-            Rules.StartGame();
-            while (!Rules.validInput)
+            GameEnvironment.StartGame();
+            while (!GameEnvironment.validInput)
             {
-                Rules.RetryUserInput();
+                GameEnvironment.HandleInputError();
             }
 
             //Create Player
-            Player ash = new Player("Ash");
-            //Player walk though pokemonWorld
-            ash.PlayerWalk(Rules.moves, Rules.moveToCoordinates);
-            //Get Pokemons
-            Console.WriteLine($"Congratiolations {ash.Name} you got {ash.GetNumberOfPokemonsCatched()} pokemons!");
+            Player player = new Player("Ash");
+
+            //Player walk though pokemonWorld.
+            player.HandlePlayerMove(GameEnvironment.moves, GameEnvironment.Coordinates);
+
+            //Get Pokemons Catched
+            Console.WriteLine($"Congratiolations {player.name} you got {player.GetNumberOfPokemonsCatched()} pokemons!");
+
+            //Play Again?
+            GameEnvironment.HandlePlayAgain();
+            if (GameEnvironment.playAgain)
+            {
+                Program.Main();
+            }
         }
     }
 }
