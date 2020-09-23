@@ -12,9 +12,9 @@ namespace test
         {
             player1 = new Player("Ash");
         }
-        public void IsPlayerWalkingCorrectly(String coordinate, Player player1, int[] moveVector)
+        public void IsPlayerWalkingCorrectly(int[] moveVector)
         {
-            player1.HandlePlayerMove(coordinate, GameEnvironment.Coordinates);
+            player1.HandlePlayerMove();
             Assert.Equal(player1.currentPosition, new int[] { player1.startPoint[0] + moveVector[0], player1.startPoint[1] + moveVector[1] });
         }
 
@@ -22,34 +22,37 @@ namespace test
         public void IsPlayerWalkingNorthCorrectly()
         {
             //North
-            IsPlayerWalkingCorrectly("N", player1, new int[] { 0, 1 });
+            player1.moves = "N";
+            IsPlayerWalkingCorrectly(new int[] { 0, 1 });
         }
         [Fact]
         public void IsPlayerWalkingSouthCorrectly()
         {
             //South
-            IsPlayerWalkingCorrectly("S", player1, new int[] { 0, -1 });
-
+            player1.moves = "S";
+            IsPlayerWalkingCorrectly(new int[] { 0, -1 });
         }
         [Fact]
         public void IsPlayerWalkingWestCorrectly()
         {
             //East
-            IsPlayerWalkingCorrectly("E", player1, new int[] { -1, 0 });
+            player1.moves = "E";
+            IsPlayerWalkingCorrectly(new int[] { -1, 0 });
         }
         [Fact]
         public void IsPlayerWalkingEastCorrectly()
         {
             //West
-            IsPlayerWalkingCorrectly("O", player1, new int[] { 1, 0 });
+            player1.moves = "O";
+            IsPlayerWalkingCorrectly(new int[] { 1, 0 });
         }
 
         [Fact]
         public void IsUniquePositionsUpdatingCorrectly()
         {
             //Check if there are duplicates in UniquePositions List
-            player1.HandlePlayerMove("NNNSS", GameEnvironment.Coordinates);
-
+            player1.moves = "NNNSS";
+            player1.HandlePlayerMove();
             Assert.Equal(player1.uniquePositons.Count, player1.uniquePositons.Distinct().Count());
         }
 
@@ -57,9 +60,10 @@ namespace test
         public void IsNumberOfPokemonsCorrect()
         {
             //Check if there are duplicates in UniquePositions List
-            player1.HandlePlayerMove("NNNSS", GameEnvironment.Coordinates);
+            player1.moves = "NNNSS";
+            player1.HandlePlayerMove();
 
-            Assert.Equal(player1.uniquePositons.Count, player1.GetNumberOfPokemonsCatched());
+            Assert.Equal(player1.uniquePositons.Count, player1.numberOfPokemons);
         }
         Player player1 { get; set; }
     }
