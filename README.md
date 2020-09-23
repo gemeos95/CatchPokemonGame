@@ -5,7 +5,7 @@ Install [.NET core SDK](https://dotnet.microsoft.com/download)
 ## Usage
 
 ```bash
-cd src/CatchPokemons
+cd CatchPokemonGame/src
 dotnet build
 dotnet run
 ```
@@ -15,6 +15,7 @@ dotnet run
 I'm using the xunit tests
 
 ```bash
-cd src/test
+cd CatchPokemonGame/test
 dotnet build
+dotnet test
 ```
