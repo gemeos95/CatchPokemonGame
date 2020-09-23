@@ -1,5 +1,4 @@
 1- Install .NET core SDK: https://dotnet.microsoft.com/download
-2- 
 
 # CatchPokemon
 
@@ -7,18 +6,18 @@ CatchPokemon is an app that allows you to catch pokemons
 
 ## Installation
 
-Install [.NET core SDK](https://dotnet.microsoft.com/download).
+Install [.NET core SDK](https://dotnet.microsoft.com/download)
 
 ## Usage
 
 ```bash
 cd src/Catch_Pokemons
+dotnet build
 dotnet run
-```
-OR
-```bash
-dotnet run --project src/Catch_Pokemons
+//or use
+dotnet run bild --project src/Catch_Pokemons
 ```
 
 ## Testing
+
 I'm using the unit test framework
