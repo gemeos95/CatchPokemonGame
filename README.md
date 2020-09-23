@@ -5,13 +5,17 @@ Install [.NET core SDK](https://dotnet.microsoft.com/download)
 ## Usage
 
 ```bash
-cd src/Catch_Pokemons
+cd CatchPokemonGame/src
 dotnet build
 dotnet run
-//or use
-dotnet run bild --project src/Catch_Pokemons
 ```
 
 ## Testing
 
-I'm using the unit test framework
+I'm using the xunit tests
+
+```bash
+cd CatchPokemonGame/test
+dotnet build
+dotnet test
+```
